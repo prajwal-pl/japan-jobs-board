@@ -17,7 +17,6 @@ type Props = {};
 
 const Navbar = async (props: Props) => {
   const session = await auth();
-  console.log(session?.user);
   return (
     <div>
       <div className="dark:bg-gray-950 bg-muted-foreground/10 border-b border-black dark:border-white w-full items-center mx-auto p-2 flex justify-between">

@@ -7,11 +7,6 @@ generator client {
   provider = "prisma-client-js"
 }
 
-enum UserRole{
-  admin
-  employer
-  candidate
-}
  
 model User {
   id            String          @id @default(auto()) @map("_id") @db.ObjectId
@@ -19,7 +14,7 @@ model User {
   email         String?         @unique
   emailVerified DateTime?
   image         String?
-  role          UserRole?
+  role          String?
   accounts      Account[]
   sessions      Session[]
   // Optional for WebAuthn support
