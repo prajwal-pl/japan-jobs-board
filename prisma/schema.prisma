@@ -7,7 +7,7 @@ generator client {
   provider = "prisma-client-js"
 }
 
-enum UserRole {
+enum UserRole{
   admin
   employer
   candidate
