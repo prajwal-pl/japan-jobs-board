@@ -11,7 +11,7 @@ const ChooseRole = async (props: Props) => {
   if (!session?.user) {
     return (
       <h1 className="w-full items-center h-screen flex gap-2 text-3xl justify-center">
-        You're not allowed to access this page!
+        Sign In to use this app!
       </h1>
     );
   }
@@ -31,7 +31,7 @@ const ChooseRole = async (props: Props) => {
                 role: "employer",
               },
             });
-            redirect("/employer");
+            redirect("/add-jobs");
           }}
         >
           {/* <p className="text-xs">I'm looking for candidates</p> */}
@@ -48,7 +48,7 @@ const ChooseRole = async (props: Props) => {
                 role: "candidate",
               },
             });
-            redirect("/candidate");
+            redirect("/search-jobs");
           }}
         >
           <Button type="submit">Candidate</Button>

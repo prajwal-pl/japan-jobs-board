@@ -12,16 +12,21 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { permanentRedirect, redirect, RedirectType } from "next/navigation";
 
 type Props = {};
 
 const Navbar = async (props: Props) => {
   const session = await auth();
+  console.log(session?.user.role);
   return (
     <div>
-      <div className="dark:bg-gray-950 bg-muted-foreground/10 border-b border-black dark:border-white w-full items-center mx-auto p-2 flex justify-between">
+      <div className="dark:bg-black/40 sticky bg-muted-foreground/10 border-b border-black dark:border-white w-full items-center mx-auto p-2 flex justify-between">
         <div>
-          <Link href="/" className="text-3xl font-bold">
+          <Link
+            href="/"
+            className="dark:hover:text-purple-500 hover:text-purple-700 text-3xl font-bold"
+          >
             Sakura
           </Link>
         </div>
@@ -30,7 +35,8 @@ const Navbar = async (props: Props) => {
             <form
               action={async () => {
                 "use server";
-                await signIn("google", { redirectTo: "/" });
+                await signIn("google");
+                if (session?.user.role == null) redirect("/choose");
               }}
             >
               <Button type="submit">Sign In</Button>
