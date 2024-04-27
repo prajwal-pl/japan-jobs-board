@@ -24,10 +24,13 @@ const JobResult = async ({ query }: { query: string }) => {
   return (
     <div>
       {Array.isArray(data) && data.length === 0 && <div>No results found</div>}
-      <div className="w-full space-y-3 grow">
+      <div className="w-full mb-12 space-y-3 grow">
         {Array.isArray(data) &&
           filterData.map((data) => (
-            <Card className="hover:shadow-md" key={data.id}>
+            <Card
+              className="hover:shadow-md border border-purple-400"
+              key={data.id}
+            >
               <CardHeader className="flex flex-row justify-between">
                 <div>
                   <CardTitle>{data.jobName}</CardTitle>
@@ -61,7 +64,7 @@ const JobResult = async ({ query }: { query: string }) => {
               </CardContent>
               <CardFooter className="flex justify-between flex-row">
                 <Link href={`/job-details/${data.id}`}>
-                  <Button>View Details</Button>
+                  <Button className="hover:bg-purple-400">View Details</Button>
                 </Link>
                 <p className="text-muted-foreground text-sm">
                   {data?.createdAt?.toDateString()}

@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 
-const Searchbar = async () => {
+const Searchbar = () => {
   const searchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -23,7 +23,7 @@ const Searchbar = async () => {
         <div className="w-full">
           <input
             type="search"
-            className="p-2 w-full bg-inherit border border-muted-foreground/15 rounded-lg"
+            className="p-2 w-full bg-inherit border border-purple-400 rounded-lg"
             onChange={(e) => handleSearch(e.target.value)}
             placeholder="search job title..."
             name="search"

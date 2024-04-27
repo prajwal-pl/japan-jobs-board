@@ -6,6 +6,7 @@ import { ModeToggle } from "@/components/mode-toggle";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "./authProvider/AuthProvider";
 import toast, { Toaster } from "react-hot-toast";
+import Footer from "@/components/Footer";
 
 const inter = DM_Sans({ subsets: ["latin-ext"] });
 
@@ -20,7 +21,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressContentEditableWarning>
       <body className={inter.className}>
         <AuthProvider>
           <Toaster />
@@ -32,6 +33,7 @@ export default function RootLayout({
           >
             <Navbar />
             {children}
+            <Footer />
           </ThemeProvider>
         </AuthProvider>
       </body>

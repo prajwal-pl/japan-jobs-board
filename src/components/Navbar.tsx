@@ -20,7 +20,7 @@ const Navbar = async (props: Props) => {
   const session = await auth();
   return (
     <div>
-      <div className="dark:bg-black/40 sticky bg-muted-foreground/10 border-b border-black dark:border-white w-full items-center mx-auto p-2 flex justify-between">
+      <div className="dark:bg-black/40 sticky bg-muted-foreground/10 border-b border-purple-500 dark:border-purple-400 w-full items-center mx-auto p-2 flex justify-between">
         <div>
           <Link
             href="/"
@@ -29,18 +29,8 @@ const Navbar = async (props: Props) => {
             Sakura
           </Link>
         </div>
-        <div className="flex gap-1">
-          {!session?.user ? (
-            <form
-              action={async () => {
-                "use server";
-                await signIn("google");
-                if (session?.user.role == null) redirect("/choose");
-              }}
-            >
-              <Button type="submit">Sign In</Button>
-            </form>
-          ) : (
+        <div className="flex gap-3 md:gap-2">
+          {!session?.user ? null : (
             <div className="pt-1 self-center">
               <DropdownMenu>
                 <DropdownMenuTrigger>
@@ -84,7 +74,9 @@ const Navbar = async (props: Props) => {
               </DropdownMenu>
             </div>
           )}
-          <ModeToggle />
+          <div className="border border-purple-400 rounded-md">
+            <ModeToggle />
+          </div>
         </div>
       </div>
     </div>

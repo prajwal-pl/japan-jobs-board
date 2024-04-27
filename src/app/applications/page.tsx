@@ -35,7 +35,7 @@ const ApplicationPage = async (props: Props) => {
 
   return (
     <main>
-      <div className="my-12 space-y-4 w-full mx-auto">
+      <div className="mt-12 h-screen space-y-4 w-full mx-auto">
         <h1 className="text-4xl md:text-5xl font-extrabold text-center">
           Job Applications
         </h1>

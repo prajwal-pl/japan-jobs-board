@@ -1,18 +1,10 @@
-"use client";
-
+import Footer from "@/components/Footer";
+import { Button } from "@/components/ui/button";
 import { ContainerScroll } from "@/components/ui/container-scroll";
-import { useSession } from "next-auth/react";
 import Image from "next/image";
-import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 export default function Home() {
-  const router = useRouter();
-  const session = useSession();
-
-  if (session.data?.user.role === null) {
-    router.push("/choose");
-  }
-
   return (
     <main className="w-full h-full">
       <section className="border-b dark:border-purple-500 border-purple-900">
@@ -74,7 +66,61 @@ export default function Home() {
           </div>
         </div>
       </section>
-      <section></section>
+      <section className="border-b dark:border-purple-500 border-purple-900 my-12 mx-auto items-center">
+        <div>
+          <h1 className="text-4xl text-center font-semibold">
+            <span className="text-purple-500">Dynamic</span> support
+          </h1>
+        </div>
+        <div className="flex flex-col mb-12 gap-2 justify-center items-center">
+          <div className="text-xl mt-4 w-2/3">
+            Our innovative jobs board application offers a seamless and
+            user-friendly experience for both employers and job seekers.
+            <br />
+            <br /> On the employer side, the platform provides a comprehensive
+            dashboard to manage job postings, track applications, and
+            communicate with potential candidates. Employers can easily create
+            and customize job listings, set specific requirements and
+            qualifications, and receive notifications when new applications are
+            submitted.
+            <br />
+            <br /> Meanwhile, job seekers can search for jobs by keyword,
+            location, and industry, and apply to positions that match their
+            skills and interests. The application also features a personalized
+            job matching system, which suggests relevant job openings based on
+            individual profiles and preferences.
+            <br />
+            <br /> With its dynamic support for both employers and job seekers,
+            our jobs board application streamlines the hiring process, increases
+            efficiency, and fosters meaningful connections between talented
+            individuals and top companies.
+          </div>
+          <Link
+            className="w-1/2 flex mt-10 items-center justify-center text-center"
+            href="/auth"
+          >
+            <Button className="w-full">Get started</Button>
+          </Link>
+        </div>
+      </section>
+      <section className="border-b dark:border-purple-500 border-purple-900 my-12 mx-auto items-center">
+        <div>
+          <h1 className="text-3xl text-center font-semibold">
+            Find your dream job today
+          </h1>
+        </div>
+        <div className="flex flex-col mb-12  justify-center items-center">
+          <p className="text-xl mt-4 w-2/3">
+            Sakura has the latest job openings from various top companies all
+            over <span className="text-purple-400">Japan</span>. With over
+            millions of users, it stands out as the world's most used job
+            searching website at Japan.
+          </p>
+          <Link className="w-1/2 my-8" href="/about">
+            <Button className="w-full">View more on Japan</Button>
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }
