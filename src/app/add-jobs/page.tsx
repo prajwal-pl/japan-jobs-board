@@ -5,10 +5,17 @@ import prisma from "@/lib";
 import { types } from "@/lib/constants";
 import { redirect } from "next/navigation";
 import React from "react";
+import { auth } from "../../../auth";
 
 type Props = {};
 
-const AddJobs = (props: Props) => {
+const AddJobs = async (props: Props) => {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/auth");
+  }
+
   const jobAction = async (formData: FormData) => {
     "use server";
     const data = {
@@ -34,6 +41,13 @@ const AddJobs = (props: Props) => {
     redirect(`/job-details/${res.id}`);
   };
 
+  if (session?.user.role === "candidate") {
+    return (
+      <div className="h-screen w-full flex text-center justify-center items-center text-4xl font-extrabold">
+        You're not allowed to access this page!
+      </div>
+    );
+  }
   return (
     <main>
       <div className="w-full h-full">

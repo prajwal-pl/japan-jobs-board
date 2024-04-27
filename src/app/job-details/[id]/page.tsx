@@ -3,6 +3,8 @@ import prisma from "@/lib";
 import React from "react";
 import { auth } from "../../../../auth";
 import Link from "next/link";
+import toast from "react-hot-toast";
+import { redirect } from "next/navigation";
 
 const JobDetails = async ({ params }: { params: { id: string } }) => {
   const session = await auth();
@@ -11,6 +13,29 @@ const JobDetails = async ({ params }: { params: { id: string } }) => {
       id: params.id,
     },
   });
+
+  if (!session?.user) {
+    redirect("/auth");
+  }
+
+  const jobData = await prisma.job?.findUnique({
+    where: {
+      id: params.id,
+    },
+  });
+
+  const applyHandler = async () => {
+    "use server";
+    await prisma.application.create({
+      data: {
+        profileInfo: session?.user.name,
+        job: jobData?.jobName,
+        userId: session?.user.id,
+      },
+    });
+    redirect("/search-jobs");
+  };
+
   return (
     <main>
       <section>
@@ -35,10 +60,17 @@ const JobDetails = async ({ params }: { params: { id: string } }) => {
             <p className="text-lg text-muted-foreground">{data?.Location}</p>
           </div>
           {session?.user.role === "candidate" ? (
-            <Button className="w-1/2">Apply now</Button>
+            <form action={applyHandler}>
+              <button
+                type="submit"
+                className="bg-black text-white dark:text-black w-full font-semibold rounded-lg hover:bg-slate-300 dark:bg-white p-2"
+              >
+                Apply now
+              </button>
+            </form>
           ) : (
             <Link className="flex justify-center w-full" href="/search-jobs">
-              <Button className="w-1/2">Back</Button>
+              <Button className=" w-1/2">Back</Button>
             </Link>
           )}
         </div>

@@ -5,6 +5,7 @@ import { ThemeProvider } from "@/components/providers/theme-provider";
 import { ModeToggle } from "@/components/mode-toggle";
 import Navbar from "@/components/Navbar";
 import AuthProvider from "./authProvider/AuthProvider";
+import toast, { Toaster } from "react-hot-toast";
 
 const inter = DM_Sans({ subsets: ["latin-ext"] });
 
@@ -22,6 +23,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <AuthProvider>
+          <Toaster />
           <ThemeProvider
             attribute="class"
             defaultTheme="system"

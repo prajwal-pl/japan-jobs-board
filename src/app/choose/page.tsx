@@ -8,12 +8,9 @@ type Props = {};
 
 const ChooseRole = async (props: Props) => {
   const session = await auth();
+
   if (!session?.user) {
-    return (
-      <h1 className="w-full items-center h-screen flex gap-2 text-3xl justify-center">
-        Sign In to use this app!
-      </h1>
-    );
+    redirect("/auth");
   }
 
   return (
