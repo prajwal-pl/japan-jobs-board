@@ -28,8 +28,15 @@ export default function Home() {
                 </h1>
               </>
             }
-            children
-          />
+          >
+            <Image
+              src="/scroll-animate.png"
+              alt="animation pic"
+              width="2500"
+              height={2500}
+              className="py-32 md:py-14 dark:bg-white rounded-lg object-fill"
+            />
+          </ContainerScroll>
         </div>
       </section>
       <section className="border-b dark:border-purple-500 border-purple-900 my-12 mx-auto items-center">

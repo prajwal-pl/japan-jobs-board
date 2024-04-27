@@ -1,12 +1,39 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
+import prisma from "@/lib";
 import { types } from "@/lib/constants";
+import { redirect } from "next/navigation";
 import React from "react";
 
 type Props = {};
 
 const AddJobs = (props: Props) => {
+  const jobAction = async (formData: FormData) => {
+    "use server";
+    const data = {
+      title: formData.get("title"),
+      company: formData.get("company"),
+      location: formData.get("location"),
+      type: formData.get("type"),
+      stipend: formData.get("stipend"),
+      description: formData.get("description"),
+    };
+
+    const res = await prisma.job.create({
+      data: {
+        jobName: data.title as string,
+        Company: data.company as string,
+        Location: data.location as string,
+        jobType: data.type as string,
+        Stipend: data.stipend as string,
+        jobDescription: data.description as string,
+      },
+    });
+
+    redirect(`/job-details/${res.id}`);
+  };
+
   return (
     <main>
       <div className="w-full h-full">
@@ -14,13 +41,13 @@ const AddJobs = (props: Props) => {
           Add your perfect job with Sakura
         </h1>
         <div className="mx-auto w-[75%]">
-          <form className="mb-12 flex flex-col gap-3" action="">
-            <Label htmlFor="name">Job Title</Label>
+          <form className="mb-12 flex flex-col gap-3" action={jobAction}>
+            <Label htmlFor="title">Job Title</Label>
             <Input type="text" name="title" placeholder="Job Title" />
 
-            <Label htmlFor="">Company Name</Label>
+            <Label htmlFor="company">Company Name</Label>
             <Input type="text" name="company" placeholder="Organization name" />
-            <Label htmlFor="">Job Location</Label>
+            <Label htmlFor="location">Job Location</Label>
             <Input type="text" name="location" placeholder="Location" />
             <Label htmlFor="type">Job Type</Label>
             <select

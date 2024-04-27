@@ -81,11 +81,12 @@ model Authenticator {
 }
 
 model Job {
-  id             String  @id @default(auto()) @map("_id") @db.ObjectId
+  id             String    @id @default(auto()) @map("_id") @db.ObjectId
   jobName        String?
   jobDescription String?
   jobType        String?
   Company        String?
   Location       String?
-  Stipend        Int?
+  Stipend        String?
+  createdAt      DateTime? @default(now())
 }
