@@ -146,28 +146,29 @@ const AboutPage = (props: Props) => {
           Toyota, Panasonic, and Toshiba. Japanese technology is also known for
           its focus on efficiency, sustainability, and cutting-edge research and
           development.
-          <br /> The country's advancements in technology have had a significant
-          impact on various industries and have helped shape the global tech
-          landscape.
+          <br /> The country&lsquo;s advancements in technology have had a
+          significant impact on various industries and have helped shape the
+          global tech landscape.
           <br />
           <br />
           Japan has had a huge impact on the development of many technologies we
           know today. Not only did the country spearhead the emergence of
-          various gadgets and technologies that didn’t exist and are now crucial
-          parts of our lives, but they also have proven to the world that
-          Japanese technology is something to look out for.
+          various gadgets and technologies that didn&lsquo;t exist and are now
+          crucial parts of our lives, but they also have proven to the world
+          that Japanese technology is something to look out for.
           <br />
-          <br /> For a long time, especially after the late ‘70s, when Japan’s
-          miracle growth started to take effect on an international scale, it
-          seemed like any new flashy tech that was developed in Japan would
-          eventually make its way into the United States and the rest of the
-          world. However, nowadays, we see that this is hardly the case anymore.
+          <br /> For a long time, especially after the late &lsquo;70s, when
+          Japan&lsquo;s miracle growth started to take effect on an
+          international scale, it seemed like any new flashy tech that was
+          developed in Japan would eventually make its way into the United
+          States and the rest of the world. However, nowadays, we see that this
+          is hardly the case anymore.
           <br />
-          <br /> Of course, when you look at a “day in the life” type vlog of a
-          Japanese person, or better yet, of a foreigner who’s living abroad in
-          Japan, we still see various technologies that seem to make life easier
-          or more convenient but are nowhere to be found in the rest of the
-          world.
+          <br /> Of course, when you look at a &lsquo;day in the life&lsquo;
+          type vlog of a Japanese person, or better yet, of a foreigner
+          who&lsquo;s living abroad in Japan, we still see various technologies
+          that seem to make life easier or more convenient but are nowhere to be
+          found in the rest of the world.
         </p>
         <Image
           className="rounded-xl object-cover"
