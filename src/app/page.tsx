@@ -40,12 +40,12 @@ export default function Home() {
 
         <div className="flex flex-col mb-12 md:flex-row  justify-center items-center">
           <div className="text-xl mt-4 w-1/2">
-            Sakura is the japan's largest job board search engine and a job
+            Sakura is the japan&apos; largest job board search engine and a job
             posting service for HR needs worldwide.
             <br />
-            <br /> It's a free service for recruiters and candidates, which aims
-            to help identify the best recruitment media for their recruitment
-            strategy or for their job search.
+            <br /> It&apos;a free service for recruiters and candidates, which
+            aims to help identify the best recruitment media for their
+            recruitment strategy or for their job search.
             <br />
             <br /> Keep in mind that Sakura is not a job board ! Sakura is a
             unique tool that provides such a service for job seekers, recruiters
@@ -113,7 +113,7 @@ export default function Home() {
           <p className="text-xl mt-4 w-2/3">
             Sakura has the latest job openings from various top companies all
             over <span className="text-purple-400">Japan</span>. With over
-            millions of users, it stands out as the world's most used job
+            millions of users, it stands out as the world&apos; most used job
             searching website at Japan.
           </p>
           <Link className="w-1/2 my-8" href="/about">

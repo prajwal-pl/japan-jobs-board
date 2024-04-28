@@ -44,7 +44,9 @@ const ChooseRole = async (props: Props) => {
   if (session.user.role) {
     return (
       <div className="w-full h-screen flex justify-center flex-col gap-3 items-center">
-        <h1 className="text-4xl font-bold">You're a {session.user.role}</h1>
+        <h1 className="text-4xl font-bold">
+          You&apos;re a {session.user.role}
+        </h1>
         <Link href="/search-jobs">
           <Button>View jobs</Button>
         </Link>
@@ -97,7 +99,7 @@ const ChooseRole = async (props: Props) => {
                     className="px-4 py-2 rounded-xl bg-black dark:bg-white dark:text-black text-white text-xs font-bold"
                   >
                     <form action={handleEmployerRole}>
-                      {/* <p className="text-xs">I'm looking for candidates</p> */}
+                      {/* <p className="text-xs">I&apos;m looking for candidates</p> */}
                       <Button className="p-0" type="submit">
                         Choose
                       </Button>

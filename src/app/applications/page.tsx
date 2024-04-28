@@ -21,7 +21,7 @@ const ApplicationPage = async (props: Props) => {
     return (
       <div className=" h-screen gap-3 items-center w-full flex flex-col text-center justify-center ">
         <h1 className="text-4xl font-bold">
-          You're not allowed to view this content!
+          You&apos;re not allowed to view this content!
         </h1>
         <Link
           className="bg-black text-white dark:bg-white dark:text-black p-3 rounded-lg font-semibold"
@@ -46,7 +46,7 @@ const ApplicationPage = async (props: Props) => {
             </div>
           )}
           {applications.map((application) => (
-            <Card>
+            <Card key={application.id}>
               <CardContent className="mt-4 flex items-center gap-2 justify-evenly">
                 <p className="truncate">{application.job}</p>
                 <p className="truncate">{application.profileInfo}</p>

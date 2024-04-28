@@ -44,7 +44,7 @@ const AddJobs = async (props: Props) => {
   if (session?.user.role === "candidate") {
     return (
       <div className="h-screen w-full flex text-center justify-center items-center text-4xl font-extrabold">
-        You're not allowed to access this page!
+        You&apos;re not allowed to access this page!
       </div>
     );
   }

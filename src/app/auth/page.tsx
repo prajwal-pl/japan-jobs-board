@@ -11,7 +11,7 @@ const Auth = async (props: Props) => {
     return (
       <div className="w-full flex-col gap-3 h-screen items-center justify-center flex">
         <h1 className="text-4xl font-semibold text-center ">
-          You're already logged in!
+          You&apos;re already logged in!
         </h1>
         <Link href="/search-jobs">
           <Button>View Jobs</Button>
