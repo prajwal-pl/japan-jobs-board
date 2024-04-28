@@ -1,7 +1,7 @@
 Web developer internship assessment report
 Mobilicis India pvt ltd.
 
-###The project name is Sakura###
+The project name is Sakura.
 it's a job listing web application built for both employers(i.e, people who're hiring) and candidates(i.e, people who are looking for jobs) in japan.
 
 The tech stack involved in this project is:
